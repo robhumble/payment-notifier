@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Payment Notifier Beta</string>
+    <string name="app_name">Payment Notifier</string>
+    <string name="button_pick_contact">Select Contact</string>
+    <string name="list_view"/>
+    <string name="button_reset">Reset</string>
+    <string name="pay_Amount_text">Edit Payment Amount Here</string>
+    <string name="button_send">Send Notifications</string>
+    <string name="EnterAmtLabel">Enter Amount Here:</string>
+    <string name="TotalPPLabel">Total Per Person: $</string>
+    <string name="NumSelectedLabel">Number of People Paying:</string>
+    <string name="SelectedListLabel">Selected Contacts To Notify:</string>
+    <string name="NoteLabel">Enter Note Here:</string>
+
+</resources>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    
+    xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <!-- android:orientation="vertical"-->
+
+
+    <Button
+        android:id="@+id/pick_contact_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="@string/button_pick_contact"
+        android:layout_alignRight="@+id/AmtField"
+        android:layout_below="@+id/NoteLabel" />
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_reset"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/AmtField" />
+
+
+    <Button
+        android:id="@+id/send_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="@string/button_send"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/AmtField"
+        android:editable="true"
+        android:textSize="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/EnterAmtLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/EnterAmtLabel"
+        android:id="@+id/EnterAmtLabel"
+        android:editable="false"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/reset_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/TotalPPLabel"
+        android:id="@+id/TotalPPLabel"
+        android:layout_above="@+id/send_button"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/TotalPPUPDField"
+        android:layout_above="@+id/send_button"
+        android:layout_alignTop="@+id/TotalPPLabel"
+        android:layout_alignRight="@+id/NumSelectedUPDField"
+        android:layout_toRightOf="@+id/TotalPPLabel"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/NumSelectedLabel"
+        android:id="@+id/NumSelectedLabel"
+        android:layout_above="@+id/TotalPPLabel"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/NumSelectedUPDField"
+        android:layout_toRightOf="@+id/NumSelectedLabel"
+        android:layout_alignTop="@+id/NumSelectedLabel"
+        android:layout_above="@+id/TotalPPUPDField"
+        android:textSize="18dp"
+        android:layout_alignRight="@+id/ContactList" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/SelectedListLabel"
+        android:id="@+id/SelectedListLabel"
+        android:layout_below="@+id/pick_contact_button"
+        android:layout_centerHorizontal="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ContactList"
+        android:layout_below="@+id/SelectedListLabel"
+        android:choiceMode="none"
+        android:textFilterEnabled="false"
+        android:layout_above="@+id/SPACER"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SPACER"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/NumSelectedLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/NoteLabel"
+        android:id="@+id/NoteLabel"
+        android:layout_alignBottom="@+id/NoteField"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/NoteField"
+        android:layout_alignParentRight="true"
+        android:editable="true"
+        android:textSize="15dp"
+        android:layout_toRightOf="@+id/NoteLabel"
+        android:layout_below="@+id/AmtField" />
+
+
+</RelativeLayout>
