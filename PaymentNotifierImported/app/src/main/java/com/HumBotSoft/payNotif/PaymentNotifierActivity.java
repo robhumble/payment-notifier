@@ -1,22 +1,22 @@
 /**
  * Robert humble
  * "HumBot Software"
- *
- * most recent change - 3/10/12
- *
+ * <p>
+ * most recent change - 6/27/2020 - (comment clean up)
+ * <p>
  * ***********
  * Payment Notifier
- *
+ * <p>
  * Purpose:
  * To provide a simple method for notifying other parties of their share of a bill or charge.
- *
+ * <p>
  * input: bill or charge total, number of recipients to share in payment
- *
+ * <p>
  * output: SMS messages marked with share of the payment sent to selected contacts
- *
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
+ * <p>
  * ! reused some code provided by google examples: BusinesCard.java,  most of ContactAccessor*.java and TargetContact.java(ContactInfo)
  */
 
@@ -75,29 +75,21 @@ public class PaymentNotifierActivity extends Activity {
     private EditText NoteField_ViewObj;
     private TextView TotalPPUPDField_ViewObj;
     private TextView NumSelectedUPDField_ViewObj;
-    //private TableLayout ContactTBL_ViewObj;
     private ListView ContactList_ViewObj;
-
 
     private static final int PICK_CONTACT_REQUEST = 1;
     public static final String ACTION_SMS_SENT = "action sent";
 
     private final ContactAccessor myContactAccessor = ContactAccessor.getInstance();
 
-
-     // max number of recipients
-     public final int MAX_RECIP = 4;
+    // max number of recipients
+    public final int MAX_RECIP = 4;
 
     // initializing the amount to pay
-     public double payTotal = 0;
-
+    public double payTotal = 0;
 
     // number of contacts selected by user(also used as index for list arrays)
     public int contactsSelected = 0;
-
-
-
-    //This looks like its main
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -114,7 +106,6 @@ public class PaymentNotifierActivity extends Activity {
         /**
          *Field for entering the total amount to be paid out by customers 
          */
-
         initializeViewsAndVariables();
 
         //ViewObject is populated in mapViewObjects
@@ -123,21 +114,6 @@ public class PaymentNotifierActivity extends Activity {
                 // If the event is a key-down event on the "enter" button
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
                         (keyCode == KeyEvent.KEYCODE_ENTER)) {
-
-/*
-//this Section was moved to common method -    captureInputsAndUpdateAllValues()
-                    try {
-
-                        payTotal = Double.valueOf(AmtField_ViewObj.getText().toString());
-                    } catch (Exception e) {
-
-                        Log.i("String", "invalid input");
-                        Log.i("String", e.getMessage());
-                        Toast.makeText(PaymentNotifierActivity.this, "Please enter a value ", Toast.LENGTH_SHORT).show();
-                    }
-
-                    updateValuesAndDisplay();
-*/
 
                     captureInputsAndUpdateAllValues();
 
@@ -149,27 +125,14 @@ public class PaymentNotifierActivity extends Activity {
 
 
         /*
-        * Note Field Logic
-        * */
+         * Note Field Logic
+         * */
 
         NoteField_ViewObj.setOnKeyListener(new OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 // If the event is a key-down event on the "enter" button
-
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
                         (keyCode == KeyEvent.KEYCODE_ENTER)) {
-/*
- //this Section was moved to common method -    captureInputsAndUpdateAllValues()
-                    try {
-                        NoteStr = (NoteField_ViewObj.getText().toString());
-                    } catch (Exception e) {
-
-                        Log.i("String", "invalid input");
-                        Toast.makeText(PaymentNotifierActivity.this, "Please enter a valid Note ", Toast.LENGTH_SHORT).show();
-                    }
-
-                    updateValuesAndDisplay();
-*/
 
                     captureInputsAndUpdateAllValues();
 
@@ -180,7 +143,7 @@ public class PaymentNotifierActivity extends Activity {
             }
         });
 
-        
+
         //Pick Contact Button
         pick_contact_button_ViewObj.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -200,8 +163,7 @@ public class PaymentNotifierActivity extends Activity {
         });
 
 
-
-         //send button start
+        //send button start
         send_button_ViewObj.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
@@ -210,7 +172,6 @@ public class PaymentNotifierActivity extends Activity {
                 fullReset();
             }
         });
-
 
     }
 
@@ -290,8 +251,7 @@ public class PaymentNotifierActivity extends Activity {
 
     }
 
-    //2015
-
+    //Send Text Messages
     private void sendNotifications() {
         SmsManager smsSender = SmsManager.getDefault();
         String messageContent;
@@ -338,13 +298,11 @@ public class PaymentNotifierActivity extends Activity {
 
         //update display
         //------------------------------------------------------
-
         //update user count
         if (numOfSelectedUsers == 1)
             NumSelectedUPDField_ViewObj.setText("1 (Just You)");
         else
             NumSelectedUPDField_ViewObj.setText(String.valueOf(numOfSelectedUsers));
-
 
         //update total
         TotalPPUPDField_ViewObj.setText(String.valueOf(amtPerPerson));
@@ -400,8 +358,6 @@ public class PaymentNotifierActivity extends Activity {
 
         //call view update method to reflect changes in view
         updateValuesAndDisplay();
-
-
     }
 
     //Update the contacts DataSource
